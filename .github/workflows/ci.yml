@@ -1,0 +1,24 @@
+name: conformance
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  always-passes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "conformance-ok"
+
+  controllable:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fail only when the branch carries a fail-marker file
+        run: |
+          if [ -f fail-marker ]; then
+            echo "fail-marker present, failing deliberately"
+            exit 1
+          fi
+          echo "no marker, passing"
