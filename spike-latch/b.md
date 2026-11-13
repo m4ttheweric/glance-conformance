@@ -1,1 +1,3 @@
-latch probe file b
+line one
+line two
+line three

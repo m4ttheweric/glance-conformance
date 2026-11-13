@@ -8,3 +8,5 @@ harness. Nothing in this repository is precious.
 The `controllable` CI job fails when a branch contains a file named
 `fail-marker`, which is how the harness gets a deterministically failing job
 to exercise retryJob and fetchJobTrace against.
+
+latch spike line
